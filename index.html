@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>Something</title>
-    <meta charset="utf-8">
-    <script src="index.js"></script>
+<html lang="en">
+  <head>
+    <title>My contacts</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#dddddd" />
+    <link rel="manifest" href="manifest.json" />
     <script type="module">
-        import { init } from './index.js';
-        init();
+      import { init } from "./index.js";
+      init();
     </script>
-</head>
+  </head>
 
-<body>
-    <h1>My contacts</h1>
+  <body>
+    <h1>Contacts</h1>
 
     <form id="form-add">
-        <input type="text" name="name" placeholder="your name" required>
-        <input type="email" name="email" placeholder="email" required>
-        <input type="tel" name="phone" placeholder="phone-number">
-        <button type="submit">Add new contact</button>
+      <input type="text" name="name" id="name" placeholder="Name" />
+      <input type="text" name="email" id="email" placeholder="E-mail" />
+      <input type="text" name="phone" id="phone" placeholder="Phone" />
+      <button type="submit">Add</button>
     </form>
 
-    <form id="form-remove">
-        <ul id="list"></ul>
-        <button type="submit">Remove selected contact(s)</button>
+    <form id="form-delete" hidden>
+      <ul id="list"></ul>
+      <button type="submit">Delete selected contacts</button>
     </form>
-
-
-</body>
-
+  </body>
 </html>

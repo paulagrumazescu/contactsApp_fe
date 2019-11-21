@@ -9,6 +9,9 @@ export function init() {
 }
 
 function onLoad() {
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('sw.js');
+  }
   render();
 }
 
@@ -26,6 +29,7 @@ function onSubmitDelete(event) {
   const data = new FormData(event.target);
   const ids = data.getAll('delete');
   remove(ids);
+  render();
 }
 
 function render() {
@@ -40,4 +44,6 @@ function render() {
     `
   );
   list.innerHTML = items.join("");
+  const formDelete = document.getElementById('form-delete');
+  formDelete.hidden = contacts.length === 0;
 }
