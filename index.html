@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Something</title>
+    <meta charset="utf-8">
+    <script src="index.js"></script>
+    <script type="module">
+        import { init } from './index.js';
+        init();
+    </script>
+</head>
+
+<body>
+    <h1>My contacts</h1>
+
+    <form id="form-add">
+        <input type="text" name="name" placeholder="your name" required>
+        <input type="email" name="email" placeholder="email" required>
+        <input type="tel" name="phone" placeholder="phone-number">
+        <button type="submit">Add new contact</button>
+    </form>
+
+    <form id="form-remove">
+        <ul id="list"></ul>
+        <button type="submit">Remove selected contact(s)</button>
+    </form>
+
+
+</body>
+
+</html>
